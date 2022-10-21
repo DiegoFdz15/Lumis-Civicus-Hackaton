@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#h2Titulo{
+    text-align: center;
+}
+
+#p_date{
+    text-align: center;
+}
+
+.inputMap{
+    width: 80%;
+    height: 30px;
+    border-radius: 5%;
+    border-color: none;
+    background-color: white;
+}
+
+#mapDescripcion{
+    height: 100px;
+    max-height: 100px;
+    min-height: 100px;
+    max-width: 80%;
+    min-width: 80%;
+    overflow-y: scroll;
+}
