@@ -69,7 +69,3 @@ var form = (latlng) => {
     </form>';
     return f;
 }
-
-var gLocation = () => {
-    
-}

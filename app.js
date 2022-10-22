@@ -12,7 +12,6 @@ const dbOptions = {
     user: 'root',
     password: 'db123',
     database: 'reportes'
-    
 }
 
 app.use(express.static(path.join(__dirname, 'public')));
