@@ -60,7 +60,7 @@ function creaDivs() {
     '</div>' + 
     '<div id="divDescripcion">' +
         '<p>Descripcion</p>' +
-        '<textarea name="reporteDescripion" id="inpDescripcion" cols="20" rows="10" placeholder="Descripcion"></textarea>' +
+        '<textarea name="reporteDescripcion" id="inpDescripcion" cols="20" rows="10" placeholder="Descripcion"></textarea>' +
     '</div>' +
     '<div id="divLatlng">' +
         '<p>Latitud</p>' +

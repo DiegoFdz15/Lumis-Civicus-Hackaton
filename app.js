@@ -5,7 +5,14 @@ const app = express();
 
 const puerto = 3000;
 
-var db = [{a:'a'}]
+var db = [{
+    reporteTitulo: "Reporte de prueba",
+    reporteDescripcion: "Avenida obstruida por arbol caido.",
+    reporteLatitud: "-25.484532514135278",
+    reporteLongitud: "-54.66015250306938",
+    reporteEvidencia: "img/imagenPrueba.jpg",
+    reporteFecha: '23/10/22'
+}]
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
@@ -29,7 +36,19 @@ app.get('/db', (req,res) => {
 });
 
 app.post('/send', (req,res) => {
-    db.push(req.body);
+
+    let f = new Date();
+    let a = f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear()
+    var tmp = {
+        reporteTitulo: req.body.reporteTitulo,
+        reporteDescripcion: req.body.reporteDescripcion,
+        reporteLatitud: req.body.reporteLatitud,
+        reporteLongitud: req.body.reporteLongitud,
+        reporteEvidencia: req.body.reporteEvidencia,
+        reporteFecha: a
+    }
+
+    db.push(tmp);
     res.redirect('/publicaciones');
 });
 

@@ -39,13 +39,25 @@
 
 .divPublicacion{
     display: flex;
+    flex-direction: row;
     background-color: #930077;
 }
 
 .pTitulo{
     width: 100%;
+    color: white;
+    font-size: 4vh;
+    display: flex;
+    align-items: center;
 }
 
 .pDescripcion{
     width: 100%;
+    color: white;
+}
+
+.imgPublicacion{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
 }
