@@ -1,0 +1,51 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#divMain{
+    top: 10%;
+    position: absolute;
+    background-color: #E4DCCF;
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+
+#divHeader{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: #930077;
+}
+
+#divLeft{
+    margin: 1%;
+    width: 79%;
+    height: 90%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+#divRight{
+    margin: 1%;
+    width: 18%;
+    height: 90%;
+    background-color: white;
+}
+
+#selectFiltro{
+    width: 80%;
+}
+
+.divPublicacion{
+    display: flex;
+    background-color: #930077;
+}
+
+.pTitulo{
+    width: 100%;
+}
+
+.pDescripcion{
+    width: 100%;
+}

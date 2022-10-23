@@ -30,6 +30,9 @@ var crearMapa = () => {
     var a = L.marker([userLatlng[0],userLatlng[1]],{}).addTo(map)
     .bindPopup('Tu estas aqui.')
     .openPopup();
+
+    document.getElementById('mapLat').value = userLatlng[0];
+    document.getElementById('mapLng').value = userLatlng[1];
     
     map.on('dblclick', (e) => {
         // Console testing
@@ -38,34 +41,14 @@ var crearMapa = () => {
         latlng[1] = e.latlng.lng;
         console.log("1. " + latlng);
 
+        document.getElementById('mapLat').value = latlng[0];
+        document.getElementById('mapLng').value = latlng[1];
+
         a.setLatLng([e.latlng.lat,e.latlng.lng ]);
-        a.bindPopup(form(latlng), {
+        a.bindPopup(e.latlng.lat + ", " + e.latlng.lng, {
             minWidth:300,
         });
         a.addTo(map);
 
     });
-}
-
-var form = (latlng) => {
-
-    const d = new Date();
-
-    let f = '\
-    <form method="post" action="/send">\
-    <h2 id="h2Titulo">Agregar Punto</h2>\
-    <p>Titulo</p>\
-    <input type="text" name="mapTitle" class="inputMap" placeholder="Titulo">\
-    <p>Latitud</p>\
-    <input type="text" name="mapLat" class="inputMap" placeholder="Latitud" value="' +  latlng[0] + '">\
-    <p>Longitud</p>\
-    <input type="text" name="mapLng" class="inputMap" placeholder="Longitud" value="' +  latlng[1] + '">\
-    <p>Descripción</p>\
-    <textarea name="mapDescripcion" id="mapDescripcion" class="inputMap" placeholder="Descripción"></textarea>\
-    <p>Agregar Imagen</p>\
-    <input type="file" name="mapImage"></br></br><p id="p_date">' + d.getDate()  + "/" + 
-    (d.getMonth() + 1) + "/" + d.getFullYear() + '</p>\
-    <input type="submit" name="mapImage">\
-    </form>';
-    return f;
 }

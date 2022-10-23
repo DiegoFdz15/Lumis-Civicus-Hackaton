@@ -1,11 +1,15 @@
+const { json } = require("express");
 const express = require("express");
 const path = require('path');
 const app = express();
 
 const puerto = 3000;
 
+var db = [{a:'a'}]
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+//app.set('view engine', 'ejs');
 app.use(express.urlencoded());
 
 app.get('/', (req,res) => {
@@ -17,11 +21,16 @@ app.get('/reportar', (req,res) => {
 });
 
 app.get('/publicaciones', (req,res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'publicaciones.html'));
+});
+
+app.get('/db', (req,res) => {
+    res.send(db);
 });
 
 app.post('/send', (req,res) => {
-    res.send(req.body);
+    db.push(req.body);
+    res.redirect('/publicaciones');
 });
 
 app.get('*', (req,res) => {
