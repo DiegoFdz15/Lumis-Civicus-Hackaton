@@ -27,6 +27,13 @@ var crearMapa = () => {
 
     L.tileLayer('https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=ALOuFh0PaTr2QERnkqaw', {}).addTo(map);
 
+    fetch('http://localhost:3000/db').then(x => x.json()).then((ltlg) => {
+        for (var i = 0; i < ltlg.length; i++){
+            L.marker([ltlg[i].reporteLatitud,ltlg[i].reporteLongitud],{}).addTo(map)
+            console.log([ltlg[i].reporteLatitud,ltlg[i].reporteLongitud]);
+        }
+    });
+
     var a = L.marker([userLatlng[0],userLatlng[1]],{}).addTo(map)
     .bindPopup('Tu estas aqui.')
     .openPopup();
