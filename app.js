@@ -1,25 +1,22 @@
 const express = require("express");
 const path = require('path');
 const app = express();
-const mysql = require('mysql');
 
-const conn = require('express-myconnection');
 const puerto = 3000;
-
-const dbOptions = {
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'db123',
-    database: 'reportes'
-}
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(conn(mysql, dbOptions, 'single'));
 
 app.get('/', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/reportar', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public', 'reportar.html'));
+});
+
+app.get('/publicaciones', (req,res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
