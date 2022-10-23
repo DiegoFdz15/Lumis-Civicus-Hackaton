@@ -30,6 +30,7 @@ var crearMapa = () => {
     fetch('http://localhost:3000/db').then(x => x.json()).then((ltlg) => {
         for (var i = 0; i < ltlg.length; i++){
             L.marker([ltlg[i].reporteLatitud,ltlg[i].reporteLongitud],{}).addTo(map)
+            .bindPopup(ltlg[i].reporteTitulo + '<a href="/publicaciones"><br>Leer mas</a>')
             console.log([ltlg[i].reporteLatitud,ltlg[i].reporteLongitud]);
         }
     });
