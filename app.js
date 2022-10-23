@@ -6,12 +6,19 @@ const app = express();
 const puerto = 3000;
 
 var db = [{
-    reporteTitulo: "Reporte de prueba",
-    reporteDescripcion: "Avenida obstruida por arbol caido.",
+    reporteTitulo: "Reporte de Bache",
+    reporteDescripcion: "Bache que molesta el paso de los autos",
     reporteLatitud: "-25.484532514135278",
     reporteLongitud: "-54.66015250306938",
     reporteEvidencia: "img/imagenPrueba.jpg",
-    reporteFecha: '23/10/22'
+    reporteFecha: '18/10/22'
+}, {
+    reporteTitulo: "Reporte de luz",
+    reporteDescripcion: "Oscuridad inmensa en las noches, asaltos y robos con frecuencia",
+    reporteLatitud: "-25.48453214135278",
+    reporteLongitud: "-54.66015250306938",
+    reporteEvidencia: "img/imagenPrueba.jpg",
+    reporteFecha: '22/10/22'
 }]
 
 app.use(express.static(path.join(__dirname, 'public')));

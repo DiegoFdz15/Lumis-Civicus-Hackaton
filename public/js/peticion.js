@@ -9,9 +9,13 @@ var a = (e) => {
         var divM = document.getElementById('divLeft');
         divM.appendChild(divPub);
 
+        var a1 = document.createElement('div');
+        a1.setAttribute('class','tituloDescrip');
+
         var img = document.createElement('img');
         img.setAttribute('class','imgPublicacion');
         img.src = e[i].reporteEvidencia
+
 
         var pTitulo = document.createElement('p');
         pTitulo.setAttribute('class','pTitulo');
@@ -22,12 +26,15 @@ var a = (e) => {
         pDescripcion.textContent = e[i].reporteDescripcion;
 
         var fecha = document.createElement('p');
+        fecha.setAttribute('class','pfecha');
         fecha.textContent = e[i].reporteFecha;
-
+        
         divPub.appendChild(img);
-        divPub.appendChild(pTitulo);
-        divPub.appendChild(pDescripcion);
-        divPub.appendChild(fecha);
+        a1.appendChild(pTitulo);
+        a1.appendChild(pDescripcion);
+        a1.appendChild(fecha);
+
+        divPub.appendChild(a1);
     }
 }
 

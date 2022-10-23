@@ -12,22 +12,42 @@
 }
 
 #divHeader{
+    height: 10%;
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    background-color: #98BAE7;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
     position: absolute;
     width: 100%;
-    height: 10%;
-    background-color: #930077;
 }
+#divHeader .logo h1 {
+    font-size: 38px;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #384046;
+  }
+  #divHeader .logo h1 a, #header .logo h1 a:hover {
+    color: #384046;
+    text-decoration: none;
+  }
+  #divHeader .logo img {
+    max-height: 40px;
+  }
+  
+
 
 #divLeft{
     margin: 1%;
     width: 79%;
     height: 90%;
     background-color: white;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #divRight{
-    margin: 1%;
+    margin: 0;
     width: 18%;
     height: 90%;
     background-color: white;
@@ -40,24 +60,34 @@
 .divPublicacion{
     display: flex;
     flex-direction: row;
-    background-color: #930077;
+    background-color: #eee;
+    border: 10px solid ;
+    border-color: #930077;
+    border-radius: 30px;
 }
 
 .pTitulo{
     width: 100%;
-    color: white;
+    color: rgb(22, 19, 19);
     font-size: 4vh;
     display: flex;
-    align-items: center;
+    font-weight: 800;
+
 }
 
 .pDescripcion{
     width: 100%;
-    color: white;
+    color: rgb(22, 19, 19);
+    font-weight: 600;
 }
 
 .imgPublicacion{
     width: 200px;
     height: 200px;
     margin: 10px;
+    border-radius: 30px;
+}
+
+.pfecha{
+    font-weight: 800;
 }
